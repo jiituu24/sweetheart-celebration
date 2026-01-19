@@ -29,14 +29,14 @@ const PhotoCollage = () => {
     { id: 3, url: memory3, caption: 'Tiny smile, big magic' },
     { id: 4, url: memory4, caption: 'Lioness' },
     { id: 5, url: memory5, caption: 'Beauty in bloom.' },
-    { id: 6, url: memory6, caption: 'Safe in My arms' },
-    { id: 7, url: memory7, caption: 'In my hostel' },
-    { id: 8, url: memory8, caption: 'Diwali with dil wali' },
-    { id: 9, url: memory9, caption: 'my dulhaniya' },
-    { id: 10, url: memory10, caption: 'Inside my heart' },
-    { id: 11, url: memory11, caption: 'My oversized ring' },
-    { id: 12, url: memory12, caption: 'Shooting ' },
-    { id: 13, url: memory13, caption: 'Holding my arm' },  
+    // { id: 6, url: memory6, caption: 'Safe in My arms' },
+    // { id: 7, url: memory7, caption: 'In my hostel' },
+    // { id: 8, url: memory8, caption: 'Diwali with dil wali' },
+    // { id: 9, url: memory9, caption: 'my dulhaniya' },
+    // { id: 10, url: memory10, caption: 'Inside my heart' },
+    // { id: 11, url: memory11, caption: 'My oversized ring' },
+    // { id: 12, url: memory12, caption: 'Shooting ' },
+    // { id: 13, url: memory13, caption: 'Holding my arm' },  
   ];
 
   return (
