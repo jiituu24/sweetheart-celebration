@@ -36,7 +36,7 @@ const PhotoCollage = () => {
     { id: 10, url: memory10, caption: 'Cool, confident, classy' },
     { id: 11, url: memory11, caption: 'Rooted in calm' },
     { id: 12, url: memory12, caption: 'Forever, quietly shining' },
-    { id: 13, url: memory13, caption: 'Sweet moments served' },s  
+    { id: 13, url: memory13, caption: 'Sweet moments served' },  
   ];
 
   return (
