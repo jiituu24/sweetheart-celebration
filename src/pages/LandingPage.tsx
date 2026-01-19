@@ -35,20 +35,20 @@ const LandingPage = () => {
         <header className="text-center mb-12">
           <div className="flex justify-center items-center gap-4 mb-4">
             <TeddyBear size={75} className="animate-float" />
-            <h1 className="text-4xl md:text-5xl font-display text-foreground">
-              Happy Birthday, My Love
+            <h1 className="text-4xl md:text-5xl font-cursive text-foreground">
+              Happy Birthday, My Love Tiya
             </h1>
             <TeddyBear size={50} className="animate-float" style={{ animationDelay: '0.5s' } as React.CSSProperties} />
           </div>
           <p className="text-lg text-muted-foreground font-body">
-            A celebration of us 💕
+           Still Under Development 💕
           </p>
         </header>
 
         {/* Photo Collage Section */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display text-center mb-8 text-foreground">
-            ✨ Our Beautiful Moments ✨
+          <h2 className="text-3xl font-display text-center mb-8 text-foreground">
+            ✨ My Beautiful Tiya ✨
           </h2>
           <PhotoCollage />
         </section>

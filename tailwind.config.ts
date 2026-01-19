@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         display: ['Playfair Display', 'serif'],
         body: ['Quicksand', 'sans-serif'],
+        cursive: ['Great Vibes', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",

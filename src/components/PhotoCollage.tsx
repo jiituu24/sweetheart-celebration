@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import HeartSticker from './HeartSticker';
-import memory1 from '@/assets/memory-1.jpg';
-import memory2 from '@/assets/memory-2.jpg';
-import memory3 from '@/assets/memory-3.jpg';
-import memory4 from '@/assets/memory-4.jpg';
-import memory5 from '@/assets/memory-5.jpg';
+import memory1 from '@/assets/20.jpg';
+import memory2 from '@/assets/10.jpg';
+import memory3 from '@/assets/7.jpg';
+import memory4 from '@/assets/24.jpg';
+import memory5 from '@/assets/1.jpg';
 import memory6 from '@/assets/memory-6.jpg';
 
 interface Photo {
@@ -17,12 +17,12 @@ const PhotoCollage = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const photos: Photo[] = [
-    { id: 1, url: memory1, caption: 'Our first adventure' },
-    { id: 2, url: memory2, caption: 'Coffee dates' },
-    { id: 3, url: memory3, caption: 'Sunset together' },
-    { id: 4, url: memory4, caption: 'Laughing moments' },
-    { id: 5, url: memory5, caption: 'Sweet memories' },
-    { id: 6, url: memory6, caption: 'Forever yours' },
+    { id: 1, url: memory1, caption: 'Effortless smile, pure grace' },
+    { id: 2, url: memory2, caption: 'Grace in blue.' },
+    { id: 3, url: memory3, caption: 'Tiny smile, big magic' },
+    { id: 4, url: memory4, caption: 'Lioness' },
+    { id: 5, url: memory5, caption: 'Beauty in bloom.' },
+    // { id: 6, url: memory6, caption: 'Forever yours' },
   ];
 
   return (
@@ -39,13 +39,13 @@ const PhotoCollage = () => {
         style={{ animationDelay: '1s' }}
       />
       
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
         {photos.map((photo, index) => (
           <div
             key={photo.id}
             className={`relative overflow-hidden rounded-xl shadow-lg transition-all duration-500 cursor-pointer
               ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''}
-              ${hoveredId === photo.id ? 'scale-105 z-10 shadow-2xl' : 'scale-100'}
+              ${hoveredId === photo.id ? 'scale-105 z-10 shadow-2x1' : 'scale-100'}
             `}
             style={{ 
               animationDelay: `${index * 0.1}s`,
@@ -53,7 +53,7 @@ const PhotoCollage = () => {
             onMouseEnter={() => setHoveredId(photo.id)}
             onMouseLeave={() => setHoveredId(null)}
           >
-            <div className={`aspect-square ${index === 0 ? 'md:aspect-[4/3]' : ''} bg-romantic-blush`}>
+            <div className={`aspect-square ${index === 0 ? 'md:aspect-[1/1]' : ''} bg-romantic-blush`}>
               <img
                 src={photo.url}
                 alt={photo.caption}
@@ -61,7 +61,7 @@ const PhotoCollage = () => {
               />
             </div>
             <div 
-              className={`absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent 
+              className={`absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent 
                 flex items-end p-4 transition-opacity duration-300
                 ${hoveredId === photo.id ? 'opacity-100' : 'opacity-0'}`}
             >
