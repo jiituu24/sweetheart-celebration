@@ -34,7 +34,7 @@ const LandingPage = () => {
         {/* Header */}
         <header className="text-center mb-12">
           <div className="flex justify-center items-center gap-4 mb-4">
-            <TeddyBear size={50} className="animate-float" />
+            <TeddyBear size={75} className="animate-float" />
             <h1 className="text-4xl md:text-5xl font-display text-foreground">
               Happy Birthday, My Love
             </h1>
@@ -109,13 +109,13 @@ const LandingPage = () => {
           )}
           
           {/* For testing - remove in production */}
-          <Button
+          {/* <Button
             variant="ghost"
             onClick={() => navigate('/gifts')}
             className="mt-4 text-muted-foreground hover:text-primary"
           >
             (Preview next page)
-          </Button>
+          </Button> */}
         </section>
       </div>
     </div>
