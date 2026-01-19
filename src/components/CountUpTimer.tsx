@@ -71,7 +71,7 @@ const CountUpTimer = ({ startDate }: CountUpTimerProps) => {
 
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center">
-      <span className="text-2xl md:text-3xl font-display font-bold text-primary">
+      <span className="text-2xl md:text-3xl font-pacifico font-bold text-primary">
         {String(value).padStart(2, '0')}
       </span>
       <span className="text-xs text-muted-foreground">{label}</span>
@@ -93,7 +93,7 @@ const CountUpTimer = ({ startDate }: CountUpTimerProps) => {
         <span className="text-xl font-display text-primary">:</span>
         <TimeUnit value={timeElapsed.seconds} label="SS" />
       </div>
-      <p className="mt-4 text-lg font-body text-secondary-foreground italic">
+      <p className="mt-4 text-lg font-pacifico text-secondary-foreground italic">
         seconds of love spent together 💕
       </p>
     </div>

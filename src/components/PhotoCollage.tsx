@@ -5,7 +5,14 @@ import memory2 from '@/assets/10.jpg';
 import memory3 from '@/assets/7.jpg';
 import memory4 from '@/assets/24.jpg';
 import memory5 from '@/assets/1.jpg';
-import memory6 from '@/assets/memory-6.jpg';
+import memory6 from '@/assets/15.jpg';
+import memory7 from '@/assets/23.jpg';
+import memory8 from '@/assets/13.jpg';
+import memory9 from '@/assets/16.jpg';
+import memory10 from '@/assets/17.jpg';
+import memory11 from '@/assets/26.jpg';
+import memory12 from '@/assets/25.jpg';
+import memory13 from '@/assets/6.jpg';
 
 interface Photo {
   id: number;
@@ -22,29 +29,36 @@ const PhotoCollage = () => {
     { id: 3, url: memory3, caption: 'Tiny smile, big magic' },
     { id: 4, url: memory4, caption: 'Lioness' },
     { id: 5, url: memory5, caption: 'Beauty in bloom.' },
-    // { id: 6, url: memory6, caption: 'Forever yours' },
+    { id: 6, url: memory6, caption: 'Safe in My arms' },
+    { id: 7, url: memory7, caption: 'In my hostel' },
+    { id: 8, url: memory8, caption: 'Diwali with dil wali' },
+    { id: 9, url: memory9, caption: 'my dulhaniya' },
+    { id: 10, url: memory10, caption: 'Inside my heart' },
+    { id: 11, url: memory11, caption: 'My oversized ring' },
+    { id: 12, url: memory12, caption: 'Shooting ' },
+    { id: 13, url: memory13, caption: 'Holding my arm' },  
   ];
 
   return (
     <div className="relative">
       <HeartSticker 
         variant="sparkle" 
-        size={50} 
+        size={30} 
         className="absolute -top-6 -left-6 animate-float z-10" 
       />
       <HeartSticker 
         variant="filled" 
-        size={35} 
+        size={25} 
         className="absolute -bottom-4 -right-4 animate-float z-10" 
         style={{ animationDelay: '1s' }}
       />
       
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+      <div className="grid grid-cols-2 md:grid-cols-8 gap-4 p-4">
         {photos.map((photo, index) => (
           <div
             key={photo.id}
             className={`relative overflow-hidden rounded-xl shadow-lg transition-all duration-500 cursor-pointer
-              ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''}
+              ${index === 0 ? 'md:col-span-4 md:row-span-4' : index < 5 ? 'md:col-span-2 md:row-span-2' : 'md:col-span-1 md:row-span-1'}
               ${hoveredId === photo.id ? 'scale-105 z-10 shadow-2x1' : 'scale-100'}
             `}
             style={{ 
@@ -53,6 +67,7 @@ const PhotoCollage = () => {
             onMouseEnter={() => setHoveredId(photo.id)}
             onMouseLeave={() => setHoveredId(null)}
           >
+            {/* <div className={`aspect-square ${index === 0 ? 'md:aspect-[1/1]' : ''} bg-romantic-blush`}> */}
             <div className={`aspect-square ${index === 0 ? 'md:aspect-[1/1]' : ''} bg-romantic-blush`}>
               <img
                 src={photo.url}
@@ -65,7 +80,7 @@ const PhotoCollage = () => {
                 flex items-end p-4 transition-opacity duration-300
                 ${hoveredId === photo.id ? 'opacity-100' : 'opacity-0'}`}
             >
-              <p className="text-primary-foreground font-body text-sm">{photo.caption}</p>
+              <p className="text-primary-foreground font-cursive text-lg">{photo.caption}</p>
             </div>
           </div>
         ))}

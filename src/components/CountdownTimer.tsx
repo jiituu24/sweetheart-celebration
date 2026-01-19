@@ -47,7 +47,7 @@ const CountdownTimer = ({ targetDate, onComplete }: CountdownTimerProps) => {
 
   const TimeBox = ({ value, label }: { value: number; label: string }) => (
     <div className="timer-box">
-      <span className="text-3xl md:text-4xl font-display font-bold text-primary">
+      <span className="text-3xl md:text-4xl font-pacifico font-bold text-primary">
         {String(value).padStart(2, '0')}
       </span>
       <span className="text-xs md:text-sm text-muted-foreground uppercase tracking-wide mt-1">

@@ -20,9 +20,9 @@ const LandingPage = () => {
   const startDate = new Date('2024-08-25T00:00:00');
 
   const birthdayNote = `
-    To the most amazing person in my life,
-    Every day with you is a blessing. Your smile brightens my world,
-    and your love fills my heart with endless joy.
+    To the most amazing person in my life, Every day with
+    you is a blessing. Your smile brightens my world, 
+    and your love fills my heart with endless joy. 
     Can't wait to celebrate this special day with you! 💕
   `;
 
@@ -34,20 +34,20 @@ const LandingPage = () => {
         {/* Header */}
         <header className="text-center mb-12">
           <div className="flex justify-center items-center gap-4 mb-4">
-            <TeddyBear size={75} className="animate-float" />
-            <h1 className="text-4xl md:text-5xl font-cursive text-foreground">
-              Happy Birthday, My Love Tiya
+            <TeddyBear size={50} className="animate-float" />
+            <h1 className="text-4xl md:text-5xl font-parisienne text-foreground">
+              <br/>Happy Birthday, My Love Tiya
             </h1>
             <TeddyBear size={50} className="animate-float" style={{ animationDelay: '0.5s' } as React.CSSProperties} />
           </div>
-          <p className="text-lg text-muted-foreground font-body">
+          <p className="text-lg text-muted-foreground font-lobster ">
            Still Under Development 💕
           </p>
         </header>
 
         {/* Photo Collage Section */}
         <section className="mb-16">
-          <h2 className="text-3xl font-display text-center mb-8 text-foreground">
+          <h2 className="text-4xl font-sacramento text-center mb-8 text-foreground">
             ✨ My Beautiful Tiya ✨
           </h2>
           <PhotoCollage />
@@ -59,7 +59,7 @@ const LandingPage = () => {
             <div className="flex justify-center mb-4">
               <HeartSticker variant="sparkle" size={50} />
             </div>
-            <h2 className="text-2xl font-display text-center mb-6 text-foreground">
+            <h2 className="text-2xl font-pacifico text-center mb-6 text-foreground">
               Countdown to Your Special Day
             </h2>
             <CountdownTimer 
@@ -69,10 +69,10 @@ const LandingPage = () => {
             
             {/* Birthday Note */}
             <div className="mt-8 p-6 bg-romantic-blush/50 rounded-xl">
-              <h3 className="font-display text-lg text-center text-foreground mb-3">
+              <h3 className="font-pacifico text-lg text-center text-foreground mb-0">
                 💝 A Beautiful Birthday Note 💝
-              </h3>
-              <p className="font-body text-muted-foreground italic text-center whitespace-pre-line">
+              </h3>           
+              <p className="font-pacifico text-muted-foreground italic text-center whitespace-pre-line text-lg">
                 {birthdayNote}
               </p>
             </div>
@@ -82,7 +82,7 @@ const LandingPage = () => {
         {/* Count Up Timer */}
         <section className="mb-16">
           <div className="card-romantic max-w-2xl mx-auto">
-            <h2 className="text-2xl font-display text-center mb-6 text-foreground">
+            <h2 className="text-2xl font-pacifico text-center mb-6 text-foreground">
               💑 Time We've Spent Together 💑
             </h2>
             <CountUpTimer startDate={startDate} />
@@ -116,6 +116,63 @@ const LandingPage = () => {
           >
             (Preview next page)
           </Button> */}
+
+          
+
+              {/* <h3 className="font-display text-lg text-center text-foreground mb-3">
+                💝 display 💝
+              </h3>
+              <h3 className="font-body text-lg text-center text-foreground mb-3">
+                💝 body 💝
+              </h3>
+              <h3 className="font-cursive text-lg text-center text-foreground mb-3">
+                💝 cursive 💝
+              </h3>
+              <h3 className="font-montserrat text-lg text-center text-foreground mb-3">
+                💝 montserrat 💝
+              </h3>
+              <h3 className="font-playfair text-lg text-center text-foreground mb-3">
+                💝 playfair 💝
+              </h3>
+              <h3 className="font-roboto text-lg text-center text-foreground mb-3">
+                💝 roboto 💝
+              </h3>
+              <h3 className="font-poppins text-lg text-center text-foreground mb-3">
+                💝 poppins 💝
+              </h3><h3 className="font-lora text-lg text-center text-foreground mb-3">
+                💝 lora 💝
+              </h3>
+              <h3 className="font-pacifico  text-lg text-center text-foreground mb-3">
+                💝 pacifico 💝
+              </h3>
+              <h3 className="font-oswald text-lg text-center text-foreground mb-3">
+                💝 oswald 💝
+              </h3>
+
+              <h3 className="font-caveat text-lg text-center text-foreground mb-3">
+                💝 caveat 💝
+              </h3>
+              <h3 className="font-cinzel text-lg text-center text-foreground mb-3">
+                💝 cinzel 💝
+              </h3>
+              <h3 className="font-sacramento text-lg text-center text-foreground mb-3">
+                💝 sacramento 💝
+              </h3>
+              <h3 className="font-lobster text-lg text-center text-foreground mb-3">
+                💝 lobster 💝
+              </h3>
+              <h3 className="font-pinyon text-lg text-center text-foreground mb-3">
+                💝 pinyon 💝
+              </h3>
+              <h3 className="font- text-lg text-center text-foreground mb-3">
+                💝 fredoka 💝
+              </h3>
+              <h3 className="font- text-lg text-center text-foreground mb-3">
+                💝 italianno 💝
+              </h3>
+              <h3 className="font-parisienne text-lg text-center text-foreground mb-3">
+                💝 parisienne 💝
+              </h3>    */}
         </section>
       </div>
     </div>
