@@ -5,14 +5,14 @@ import memory2 from '@/assets/10.jpg';
 import memory3 from '@/assets/7.jpg';
 import memory4 from '@/assets/24.jpg';
 import memory5 from '@/assets/1.jpg';
-import memory6 from '@/assets/15.jpg';
-import memory7 from '@/assets/23.jpg';
-import memory8 from '@/assets/13.jpg';
-import memory9 from '@/assets/16.jpg';
-import memory10 from '@/assets/17.jpg';
-import memory11 from '@/assets/26.jpg';
-import memory12 from '@/assets/25.jpg';
-import memory13 from '@/assets/6.jpg';
+import memory6 from '@/assets/8.jpg';
+import memory7 from '@/assets/9.jpg';
+import memory8 from '@/assets/11.jpg';
+import memory9 from '@/assets/12.jpg';
+import memory10 from '@/assets/18.jpg';
+import memory11 from '@/assets/22.jpg';
+import memory12 from '@/assets/26.jpg';
+import memory13 from '@/assets/4.jpg';
 
 interface Photo {
   id: number;
@@ -29,14 +29,14 @@ const PhotoCollage = () => {
     { id: 3, url: memory3, caption: 'Tiny smile, big magic' },
     { id: 4, url: memory4, caption: 'Lioness' },
     { id: 5, url: memory5, caption: 'Beauty in bloom.' },
-    // { id: 6, url: memory6, caption: 'Safe in My arms' },
-    // { id: 7, url: memory7, caption: 'In my hostel' },
-    // { id: 8, url: memory8, caption: 'Diwali with dil wali' },
-    // { id: 9, url: memory9, caption: 'my dulhaniya' },
-    // { id: 10, url: memory10, caption: 'Inside my heart' },
-    // { id: 11, url: memory11, caption: 'My oversized ring' },
-    // { id: 12, url: memory12, caption: 'Shooting ' },
-    // { id: 13, url: memory13, caption: 'Holding my arm' },  
+    { id: 6, url: memory6, caption: 'Safe in My arms' },
+    { id: 7, url: memory7, caption: 'In my hostel' },
+    { id: 8, url: memory8, caption: 'Diwali with dil wali' },
+    { id: 9, url: memory9, caption: 'my dulhaniya' },
+    { id: 10, url: memory10, caption: 'Inside my heart' },
+    { id: 11, url: memory11, caption: 'My oversized ring' },
+    { id: 12, url: memory12, caption: 'Shooting ' },
+    { id: 13, url: memory13, caption: 'Holding my arm' },  
   ];
 
   return (
