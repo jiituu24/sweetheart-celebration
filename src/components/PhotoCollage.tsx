@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import HeartSticker from './HeartSticker';
-import memory1 from '@/assets/20.jpg';
-import memory2 from '@/assets/10.jpg';
-import memory3 from '@/assets/7.jpg';
-import memory4 from '@/assets/24.jpg';
-import memory5 from '@/assets/1.jpg';
-import memory6 from '@/assets/8.jpg';
-import memory7 from '@/assets/9.jpg';
-import memory8 from '@/assets/11.jpg';
-import memory9 from '@/assets/12.jpg';
-import memory10 from '@/assets/18.jpg';
-import memory11 from '@/assets/22.jpg';
-import memory12 from '@/assets/26.jpg';
-import memory13 from '@/assets/4.jpg';
+import memory1 from '@/assets/a1.jpg';
+import memory2 from '@/assets/a2.jpg';
+import memory3 from '@/assets/a3.jpg';
+import memory4 from '@/assets/a4.jpg';
+import memory5 from '@/assets/a5.jpg';
+import memory6 from '@/assets/a6.jpg';
+import memory7 from '@/assets/a7.jpg';
+import memory8 from '@/assets/a8.jpg';
+import memory9 from '@/assets/a9.jpg';
+import memory10 from '@/assets/a10.jpg';
+import memory11 from '@/assets/a11.jpg';
+import memory12 from '@/assets/a12.jpg';
+import memory13 from '@/assets/a13.jpg';
 
 interface Photo {
   id: number;

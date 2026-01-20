@@ -40,9 +40,9 @@ const LandingPage = () => {
             </h1>
             <TeddyBear size={50} className="animate-float" style={{ animationDelay: '0.5s' } as React.CSSProperties} />
           </div>
-          <p className="text-lg text-muted-foreground font-lobster ">
-           Still Under Development 💕
-          </p>
+            <p className="text-lg text-muted-foreground font-lobster">
+            Created By <a href="https://instagram.com/jiituu.24" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">@jiituu.24</a> with pure love for <a href="https://instagram.com/_acheronsmermaid" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">@_acheronsmermaid</a> 💕
+            </p>
         </header>
 
         {/* Photo Collage Section */}

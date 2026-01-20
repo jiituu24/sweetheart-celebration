@@ -49,7 +49,7 @@ const CakePage = () => {
         {/* Ambient messages */}
         <div className="max-w-md mx-auto text-center">
           <p className="font-body text-muted-foreground italic mb-4">
-            "20 candles for 20 amazing years of you bringing light to this world"
+          . May all your wishes come true today and always."
           </p>
           <div className="flex justify-center gap-2">
             <HeartSticker variant="filled" size={20} />

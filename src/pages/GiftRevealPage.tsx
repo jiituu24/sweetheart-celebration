@@ -118,7 +118,7 @@ const GiftRevealPage = () => {
               onClick={() => navigate('/gallery')}
               className="btn-romantic text-lg px-10 py-6 flex items-center gap-3 mx-auto"
             >
-              <span>Time to Blow the Candles!</span>
+              <span>Let's see Your Memories!</span>
               <ArrowRight className="w-6 h-6" />
             </Button>
           </div>

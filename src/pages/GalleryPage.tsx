@@ -18,7 +18,7 @@ const GalleryPage = () => {
           <div className="flex justify-center items-center gap-4 mb-4">
             <Images className="w-10 h-10 text-primary animate-float" />
             <h1 className="text-3xl md:text-4xl font-display text-foreground">
-              Our Precious Memories
+              Your Precious Memories
             </h1>
             <Images className="w-10 h-10 text-primary animate-float" style={{ animationDelay: '0.5s' } as React.CSSProperties} />
           </div>
