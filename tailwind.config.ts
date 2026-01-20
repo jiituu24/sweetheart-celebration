@@ -25,7 +25,6 @@ export default {
         lora: ['Lora', 'serif'],
         pacifico: ['Pacifico', 'cursive'],
         oswald: ['Oswald', 'sans-serif'],
-
         caveat: ['Caveat', 'cursive'],
         cinzel: ['Cinzel Decorative', 'serif'],
         sacramento: ['Sacramento', 'cursive'],
@@ -95,6 +94,11 @@ export default {
           "petal-pink": "hsl(var(--petal-pink))",
           "leaf-orange": "hsl(var(--leaf-orange))",
           "leaf-red": "hsl(var(--leaf-red))",
+          "midnight-purple": "hsl(var(--midnight-purple))",
+          "deep-charcoal": "hsl(var(--deep-charcoal))",
+          "muted-crimson": "hsl(var(--muted-crimson))",
+          "soft-violet": "hsl(var(--soft-violet))",
+          "ember-glow": "hsl(var(--ember-glow))",
         },
       },
       borderRadius: {
@@ -116,12 +120,16 @@ export default {
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsla(350, 70%, 45%, 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsla(350, 70%, 45%, 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsla(350, 50%, 40%, 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsla(350, 50%, 40%, 0.6)" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
           "50%": { transform: "translateY(-20px) rotate(5deg)" },
+        },
+        "scratch-fade": {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
         },
       },
       animation: {
@@ -130,6 +138,7 @@ export default {
         "fade-in-up": "fade-in-up 0.8s ease-out forwards",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
         float: "float 3s ease-in-out infinite",
+        "scratch-fade": "scratch-fade 0.7s ease-out forwards",
       },
     },
   },

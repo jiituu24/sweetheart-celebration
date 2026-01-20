@@ -14,6 +14,7 @@ const ScratchCard = ({ id, gift, compliment, onRevealed, isRevealed }: ScratchCa
   const [isScratching, setIsScratching] = useState(false);
   const [scratchPercentage, setScratchPercentage] = useState(0);
   const [hasTriggeredReveal, setHasTriggeredReveal] = useState(false);
+  const [isFadingOut, setIsFadingOut] = useState(false);
 
   const icons = [Heart, Star, Sparkles];
   const IconComponent = icons[id % 3];
@@ -26,28 +27,28 @@ const ScratchCard = ({ id, gift, compliment, onRevealed, isRevealed }: ScratchCa
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Create gradient scratch layer
+    // Create dark romantic gradient scratch layer
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, '#e879a9');
-    gradient.addColorStop(0.5, '#f4a5c4');
-    gradient.addColorStop(1, '#ffd4e5');
+    gradient.addColorStop(0, '#4A2040');
+    gradient.addColorStop(0.5, '#5C2A4A');
+    gradient.addColorStop(1, '#6B3050');
     
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Add decorative pattern
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
-    for (let i = 0; i < 20; i++) {
+    // Add decorative pattern with muted sparkles
+    ctx.fillStyle = 'rgba(147, 112, 219, 0.2)';
+    for (let i = 0; i < 15; i++) {
       const x = Math.random() * canvas.width;
       const y = Math.random() * canvas.height;
       ctx.beginPath();
-      ctx.arc(x, y, 3 + Math.random() * 5, 0, Math.PI * 2);
+      ctx.arc(x, y, 2 + Math.random() * 4, 0, Math.PI * 2);
       ctx.fill();
     }
 
     // Add "Scratch Me!" text
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-    ctx.font = 'bold 14px sans-serif';
+    ctx.fillStyle = 'rgba(200, 180, 200, 0.8)';
+    ctx.font = 'bold 13px sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText('✨ Scratch Me! ✨', canvas.width / 2, canvas.height / 2);
@@ -66,7 +67,7 @@ const ScratchCard = ({ id, gift, compliment, onRevealed, isRevealed }: ScratchCa
   };
 
   const scratch = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
-    if (!isScratching || isRevealed) return;
+    if (!isScratching || isRevealed || isFadingOut) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -97,9 +98,15 @@ const ScratchCard = ({ id, gift, compliment, onRevealed, isRevealed }: ScratchCa
     const percentage = calculateScratchPercentage(ctx, canvas);
     setScratchPercentage(percentage);
 
+    // Trigger fade out transition when 40% is scratched
     if (percentage > 40 && !hasTriggeredReveal) {
       setHasTriggeredReveal(true);
-      onRevealed(id);
+      setIsFadingOut(true);
+      
+      // Wait for fade animation (0.7s) before marking as revealed
+      setTimeout(() => {
+        onRevealed(id);
+      }, 700);
     }
   };
 
@@ -108,30 +115,32 @@ const ScratchCard = ({ id, gift, compliment, onRevealed, isRevealed }: ScratchCa
 
   return (
     <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg transform transition-transform hover:scale-[1.02]">
-      {/* Revealed content */}
-      <div className="absolute inset-0 bg-gradient-to-br from-card via-card to-muted p-3 flex flex-col items-center justify-center text-center">
+      {/* Revealed content - dark romantic styling */}
+      <div className="absolute inset-0 bg-gradient-to-br from-card via-secondary to-muted p-3 flex flex-col items-center justify-center text-center border border-border/30">
         <div className={`mb-2 animate-float ${iconColors[id % 3]}`}>
           <IconComponent className="w-6 h-6" fill="currentColor" />
         </div>
         <div className="space-y-2">
-          <div className="bg-primary/10 rounded-lg p-2">
+          <div className="bg-primary/20 rounded-lg p-2 border border-primary/20">
             <p className="text-xs text-muted-foreground font-body">🎁 Gift</p>
             <p className="text-sm font-display text-foreground leading-tight">{gift}</p>
           </div>
-          <div className="bg-accent/10 rounded-lg p-2">
+          <div className="bg-accent/20 rounded-lg p-2 border border-accent/20">
             <p className="text-xs text-muted-foreground font-body">💕 Compliment</p>
             <p className="text-xs font-body text-foreground italic leading-tight">{compliment}</p>
           </div>
         </div>
       </div>
 
-      {/* Scratch layer */}
+      {/* Scratch layer with fade transition */}
       {!isRevealed && (
         <canvas
           ref={canvasRef}
           width={200}
           height={260}
-          className="absolute inset-0 w-full h-full cursor-pointer touch-none"
+          className={`absolute inset-0 w-full h-full cursor-pointer touch-none transition-opacity duration-700 ease-out ${
+            isFadingOut ? 'opacity-0' : 'opacity-100'
+          }`}
           onMouseDown={handleStart}
           onMouseUp={handleEnd}
           onMouseLeave={handleEnd}
@@ -148,7 +157,7 @@ const ScratchCard = ({ id, gift, compliment, onRevealed, isRevealed }: ScratchCa
           {[...Array(6)].map((_, i) => (
             <Sparkles
               key={i}
-              className="absolute text-romantic-gold animate-ping"
+              className="absolute text-romantic-soft-violet animate-ping"
               style={{
                 left: `${20 + Math.random() * 60}%`,
                 top: `${20 + Math.random() * 60}%`,
