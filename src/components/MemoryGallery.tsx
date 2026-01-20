@@ -18,7 +18,7 @@ const MemoryGallery = () => {
   const [selectedMemory, setSelectedMemory] = useState<number | null>(null);
 
   const memories: Memory[] = [
-    { id: 1, imageUrl: memory1, message: 'The day we first met...' },
+    { id: 1, imageUrl: memory1, message: 'The day we first met1...' },
     { id: 2, imageUrl: memory2, message: 'Our favorite coffee dates' },
     { id: 3, imageUrl: memory3, message: 'That perfect sunset moment' },
     { id: 4, imageUrl: memory4, message: 'When you made me laugh so hard' },
