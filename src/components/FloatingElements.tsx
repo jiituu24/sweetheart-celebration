@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react';
 
 interface FloatingElement {
   id: number;
-  type: 'petal' | 'leaf' | 'balloon';
+  type: 'petal' | 'leaf' | 'sparkle' | 'heart';
   left: number;
+  top: number;
   size: number;
   duration: number;
   delay: number;
   color: string;
+  driftX: number;
+  driftRotate: number;
 }
 
 const FloatingElements = () => {
@@ -17,42 +20,73 @@ const FloatingElements = () => {
     const generateElements = () => {
       const newElements: FloatingElement[] = [];
       
-      // Petals
-      for (let i = 0; i < 15; i++) {
+      // Dark romantic color palette
+      const petalColors = ['#8B2252', '#6B1839', '#A0455A', '#7D3C5E'];
+      const leafColors = ['#4A3728', '#5C4033', '#3D2B1F', '#4E3B31'];
+      const sparkleColors = ['#9370DB', '#8A6BBE', '#7B68EE', '#6A5ACD'];
+      const heartColors = ['#722F37', '#800020', '#8B0000', '#A52A2A'];
+      
+      // Petals - distributed across viewport
+      for (let i = 0; i < 12; i++) {
         newElements.push({
           id: i,
           type: 'petal',
-          left: Math.random() * 100,
-          size: 15 + Math.random() * 15,
-          duration: 8 + Math.random() * 6,
-          delay: Math.random() * 10,
-          color: ['#FFB6C1', '#FFC0CB', '#FFD6E0', '#FFDEE2'][Math.floor(Math.random() * 4)],
+          left: (i * 8.3) + Math.random() * 5, // Evenly distributed with slight randomness
+          top: Math.random() * -20,
+          size: 12 + Math.random() * 10,
+          duration: 25 + Math.random() * 15, // Slower, more gentle
+          delay: Math.random() * 20,
+          color: petalColors[Math.floor(Math.random() * petalColors.length)],
+          driftX: -50 + Math.random() * 100,
+          driftRotate: 180 + Math.random() * 360,
         });
       }
       
-      // Leaves
-      for (let i = 15; i < 25; i++) {
+      // Leaves - distributed across viewport
+      for (let i = 12; i < 20; i++) {
         newElements.push({
           id: i,
           type: 'leaf',
-          left: Math.random() * 100,
-          size: 20 + Math.random() * 15,
-          duration: 10 + Math.random() * 5,
-          delay: Math.random() * 8,
-          color: ['#D2691E', '#CD853F', '#B8860B', '#DAA520'][Math.floor(Math.random() * 4)],
+          left: ((i - 12) * 12.5) + Math.random() * 8,
+          top: Math.random() * -20,
+          size: 16 + Math.random() * 12,
+          duration: 30 + Math.random() * 15,
+          delay: Math.random() * 25,
+          color: leafColors[Math.floor(Math.random() * leafColors.length)],
+          driftX: -60 + Math.random() * 120,
+          driftRotate: 360 + Math.random() * 360,
         });
       }
       
-      // Balloons
-      for (let i = 25; i < 32; i++) {
+      // Sparkles - magical elements distributed evenly
+      for (let i = 20; i < 32; i++) {
         newElements.push({
           id: i,
-          type: 'balloon',
-          left: Math.random() * 100,
-          size: 30 + Math.random() * 20,
-          duration: 15 + Math.random() * 10,
-          delay: Math.random() * 12,
-          color: ['#FF69B4', '#FF1493', '#DC143C', '#FFD700', '#FF6B6B'][Math.floor(Math.random() * 5)],
+          type: 'sparkle',
+          left: ((i - 20) * 8.3) + Math.random() * 5,
+          top: Math.random() * -15,
+          size: 8 + Math.random() * 8,
+          duration: 20 + Math.random() * 20,
+          delay: Math.random() * 30,
+          color: sparkleColors[Math.floor(Math.random() * sparkleColors.length)],
+          driftX: -40 + Math.random() * 80,
+          driftRotate: 0,
+        });
+      }
+      
+      // Hearts - fewer, more special
+      for (let i = 32; i < 38; i++) {
+        newElements.push({
+          id: i,
+          type: 'heart',
+          left: ((i - 32) * 16.6) + Math.random() * 10,
+          top: Math.random() * -10,
+          size: 10 + Math.random() * 8,
+          duration: 35 + Math.random() * 15,
+          delay: Math.random() * 35,
+          color: heartColors[Math.floor(Math.random() * heartColors.length)],
+          driftX: -30 + Math.random() * 60,
+          driftRotate: -30 + Math.random() * 60,
         });
       }
       
@@ -70,9 +104,12 @@ const FloatingElements = () => {
         left: `${el.left}%`,
         width: el.size,
         height: el.size,
-        animationDuration: `${el.duration}s`,
-        animationDelay: `${el.delay}s`,
-      }}
+        animationDuration: `${el.duration}s, 4s`,
+        animationDelay: `${el.delay}s, 0s`,
+        '--drift-x': `${el.driftX}px`,
+        '--drift-rotate': `${el.driftRotate}deg`,
+        opacity: 0.6,
+      } as React.CSSProperties}
       viewBox="0 0 24 24"
       fill={el.color}
     >
@@ -88,9 +125,12 @@ const FloatingElements = () => {
         left: `${el.left}%`,
         width: el.size,
         height: el.size,
-        animationDuration: `${el.duration}s`,
-        animationDelay: `${el.delay}s`,
-      }}
+        animationDuration: `${el.duration}s, 5s`,
+        animationDelay: `${el.delay}s, 0s`,
+        '--drift-x': `${el.driftX}px`,
+        '--drift-rotate': `${el.driftRotate}deg`,
+        opacity: 0.5,
+      } as React.CSSProperties}
       viewBox="0 0 24 24"
       fill={el.color}
     >
@@ -98,22 +138,46 @@ const FloatingElements = () => {
     </svg>
   );
 
-  const renderBalloon = (el: FloatingElement) => (
+  const renderSparkle = (el: FloatingElement) => (
     <svg
       key={el.id}
-      className="balloon"
+      className="sparkle-float"
       style={{
         left: `${el.left}%`,
         width: el.size,
-        height: el.size * 1.3,
-        animationDuration: `${el.duration}s`,
-        animationDelay: `${el.delay}s`,
-      }}
-      viewBox="0 0 24 36"
+        height: el.size,
+        animationDuration: `${el.duration}s, 6s`,
+        animationDelay: `${el.delay}s, 0s`,
+        '--drift-x': `${el.driftX}px`,
+        '--drift-rotate': '0deg',
+        '--sway-amount': '15px',
+        opacity: 0.7,
+      } as React.CSSProperties}
+      viewBox="0 0 24 24"
+      fill={el.color}
     >
-      <ellipse cx="12" cy="10" rx="10" ry="12" fill={el.color} />
-      <path d="M12 22 L12 36" stroke={el.color} strokeWidth="1" />
-      <ellipse cx="12" cy="22" rx="3" ry="2" fill={el.color} opacity="0.7" />
+      <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
+    </svg>
+  );
+
+  const renderHeart = (el: FloatingElement) => (
+    <svg
+      key={el.id}
+      className="petal"
+      style={{
+        left: `${el.left}%`,
+        width: el.size,
+        height: el.size,
+        animationDuration: `${el.duration}s, 5s`,
+        animationDelay: `${el.delay}s, 0s`,
+        '--drift-x': `${el.driftX}px`,
+        '--drift-rotate': `${el.driftRotate}deg`,
+        opacity: 0.5,
+      } as React.CSSProperties}
+      viewBox="0 0 24 24"
+      fill={el.color}
+    >
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
     </svg>
   );
 
@@ -125,8 +189,10 @@ const FloatingElements = () => {
             return renderPetal(el);
           case 'leaf':
             return renderLeaf(el);
-          case 'balloon':
-            return renderBalloon(el);
+          case 'sparkle':
+            return renderSparkle(el);
+          case 'heart':
+            return renderHeart(el);
           default:
             return null;
         }
