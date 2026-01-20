@@ -14,7 +14,7 @@ const LandingPage = () => {
   const [countdownComplete, setCountdownComplete] = useState(false);
   
   // Target date: January 22, 2026
-  const targetDate = new Date('2026-01-22T00:00:00');
+  const targetDate = new Date('2026-01-20T00:00:00');
   
   // Start date: August 25, 2024
   const startDate = new Date('2024-08-25T00:00:00');
@@ -109,13 +109,13 @@ const LandingPage = () => {
           )}
           
           {/* For testing - remove in production */}
-          {/* <Button
+          <Button
             variant="ghost"
             onClick={() => navigate('/gifts')}
             className="mt-4 text-muted-foreground hover:text-primary"
           >
             (Preview next page)
-          </Button> */}
+          </Button>
 
           
 

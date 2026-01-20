@@ -13,26 +13,28 @@ const GiftRevealPage = () => {
   const [showContinue, setShowContinue] = useState(false);
 
   const giftsAndCompliments = [
-    { id: 1, gift: 'Endless Hugs', compliment: 'Your smile lights up my world' },
-    { id: 2, gift: 'Adventure Trip', compliment: 'You make every day an adventure' },
-    { id: 3, gift: 'Sweet Treats', compliment: 'You\'re sweeter than any dessert' },
-    { id: 4, gift: 'Quality Time', compliment: 'Every moment with you is precious' },
-    { id: 5, gift: 'Love Letters', compliment: 'Your words touch my soul' },
-    { id: 6, gift: 'Forever Promise', compliment: 'You\'re my forever person' },
-    { id: 7, gift: 'Cozy Movie Nights', compliment: 'Your warmth is my comfort' },
-    { id: 8, gift: 'Breakfast in Bed', compliment: 'You deserve to be pampered' },
-    { id: 9, gift: 'Spa Day Together', compliment: 'Your beauty radiates inside out' },
-    { id: 10, gift: 'Star Gazing Date', compliment: 'You\'re my brightest star' },
-    { id: 11, gift: 'Surprise Flowers', compliment: 'You bloom my heart with joy' },
-    { id: 12, gift: 'Dance in the Rain', compliment: 'You make storms feel magical' },
-    { id: 13, gift: 'Picnic at Sunset', compliment: 'Sunsets are prettier with you' },
-    { id: 14, gift: 'Handmade Jewelry', compliment: 'You\'re one of a kind treasure' },
-    { id: 15, gift: 'Love Playlist', compliment: 'Every love song reminds me of you' },
-    { id: 16, gift: 'Photo Album', compliment: 'Every picture captures your grace' },
-    { id: 17, gift: 'Midnight Snacks', compliment: 'Late nights are better with you' },
-    { id: 18, gift: 'Dream Vacation', compliment: 'You\'re my dream come true' },
-    { id: 19, gift: 'Forever Cuddles', compliment: 'Your embrace is my safe place' },
-    { id: 20, gift: 'All My Love', compliment: 'You are absolutely perfect to me' },
+    { id: 1, gift: 'Your Birthday Website', compliment: 'A gift crafted with time, love, and intention' },
+    { id: 2, gift: 'Reel', compliment: 'A moment edited into a memory' },
+    { id: 3, gift: 'Love Letter', compliment: 'Words wrapped in heartfelt sincerity.' },
+    { id: 4, gift: 'Photo Collage', compliment: 'A lifetime of moments in one frame' },
+    { id: 5, gift: 'Dress', compliment: 'Elegance tailored just for you' },
+    { id: 6, gift: 'Poem', compliment: 'Feelings written in rhythm' },
+
+    
+    { id: 12, gift: 'Mobile Stand', compliment: 'Small gift, big everyday comfort' },
+    { id: 13, gift: 'Kinder Joy', compliment: 'A little surprise with a lot of happiness inside' },
+    { id: 14, gift: 'HairBand', compliment: 'Simple, sweet, and made for you' },
+    { id: 15, gift: 'Photo Frame', compliment: 'A moment chosen to last forever' },
+    { id: 16, gift: 'Necklace', compliment: 'Grace that rests close to the heart' },
+    { id: 17, gift: 'Ring', compliment: 'Late nights are better with you' },
+    { id: 18, gift: 'Ketos/Sandals', compliment: 'Comfort styled with care' },
+    { id: 19, gift: 'Teddy', compliment: 'Soft, warm, and full of love' },
+    { id: 20, gift: 'Anklet', compliment: 'Grace that\'ll moves with you' },
+    { id: 7, gift: '', compliment: '' },
+    { id: 8, gift: '', compliment: '' },
+    { id: 9, gift: '', compliment: '' },
+    { id: 10, gift: '', compliment: '' },
+    { id: 11, gift: '', compliment: '' },
   ];
 
   const handleCardRevealed = (id: number) => {
