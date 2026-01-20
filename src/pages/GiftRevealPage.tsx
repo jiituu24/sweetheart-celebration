@@ -18,9 +18,7 @@ const GiftRevealPage = () => {
     { id: 3, gift: 'Love Letter', compliment: 'Words wrapped in heartfelt sincerity.' },
     { id: 4, gift: 'Photo Collage', compliment: 'A lifetime of moments in one frame' },
     { id: 5, gift: 'Dress', compliment: 'Elegance tailored just for you' },
-    { id: 6, gift: 'Poem', compliment: 'Feelings written in rhythm' },
-
-    
+    { id: 6, gift: 'Poem', compliment: 'Feelings written in rhythm' },    
     { id: 12, gift: 'Mobile Stand', compliment: 'Small gift, big everyday comfort' },
     { id: 13, gift: 'Kinder Joy', compliment: 'A little surprise with a lot of happiness inside' },
     { id: 14, gift: 'HairBand', compliment: 'Simple, sweet, and made for you' },
@@ -30,11 +28,11 @@ const GiftRevealPage = () => {
     { id: 18, gift: 'Ketos/Sandals', compliment: 'Comfort styled with care' },
     { id: 19, gift: 'Teddy', compliment: 'Soft, warm, and full of love' },
     { id: 20, gift: 'Anklet', compliment: 'Grace that\'ll moves with you' },
-    { id: 7, gift: '', compliment: '' },
-    { id: 8, gift: '', compliment: '' },
-    { id: 9, gift: '', compliment: '' },
-    { id: 10, gift: '', compliment: '' },
-    { id: 11, gift: '', compliment: '' },
+    { id: 7, gift: 'Eye Shadow', compliment: 'Colors that enhance her charm' },
+    { id: 8, gift: 'Lip gloss', compliment: 'Subtle shine, instant charm' },
+    { id: 9, gift: 'Blush', compliment: 'Soft color, natural glow' },
+    { id: 10, gift: 'Compact', compliment: 'Flawless touch, anytime' },
+    { id: 11, gift: 'Mascara', compliment: 'Eyes that speak elegance' },
   ];
 
   const handleCardRevealed = (id: number) => {
@@ -130,13 +128,13 @@ const GiftRevealPage = () => {
               Keep scratching! {20 - revealedCards.size} more to go... ✨
             </p>
           )}
-          {/* <Button
+          <Button
             variant="ghost"
             onClick={() => navigate('/gallery')}
             className="mt-4 text-muted-foreground hover:text-primary"
           >
             (Preview next page)
-          </Button> */}
+          </Button>
         </section>
       </div>
     </div>

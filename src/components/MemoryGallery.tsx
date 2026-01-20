@@ -1,12 +1,7 @@
 import { useState } from 'react';
 import HeartSticker from './HeartSticker';
 import TeddyBear from './TeddyBear';
-import memory1 from '@/assets/memory-1.jpg';
-import memory2 from '@/assets/memory-2.jpg';
-import memory3 from '@/assets/memory-3.jpg';
-import memory4 from '@/assets/memory-4.jpg';
-import memory5 from '@/assets/memory-5.jpg';
-import memory6 from '@/assets/memory-6.jpg';
+import { loadMemories } from '@/lib/image-loader';
 
 interface Memory {
   id: number;
@@ -17,14 +12,7 @@ interface Memory {
 const MemoryGallery = () => {
   const [selectedMemory, setSelectedMemory] = useState<number | null>(null);
 
-  const memories: Memory[] = [
-    { id: 1, imageUrl: memory1, message: 'The day we first met...' },
-    { id: 2, imageUrl: memory2, message: 'Our favorite coffee dates' },
-    { id: 3, imageUrl: memory3, message: 'That perfect sunset moment' },
-    { id: 4, imageUrl: memory4, message: 'When you made me laugh so hard' },
-    { id: 5, imageUrl: memory5, message: 'Beautiful like these roses' },
-    { id: 6, imageUrl: memory6, message: 'Creating magic every day' },
-  ];
+  const memories: Memory[] = loadMemories();
 
   const loveMessages = [
     "Every moment with you is a treasure I hold dear in my heart.",
