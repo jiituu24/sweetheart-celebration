@@ -150,7 +150,7 @@ const BirthdayCake = ({ candleCount = 20, onAllBlown }: BirthdayCakeProps) => {
           </span>
         ) : (
           <span className="flex items-center gap-2">
-            ✨ Click to Blow the Candles ✨
+            ✨Click to Blow the Candles✨
           </span>
         )}
       </button>
