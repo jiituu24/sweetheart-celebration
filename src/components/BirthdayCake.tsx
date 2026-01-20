@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Flame } from 'lucide-react';
+import cakeImage from '../assets/5bg1.png';
 
 interface BirthdayCakeProps {
   candleCount?: number;
@@ -34,26 +35,35 @@ const BirthdayCake = ({ candleCount = 20, onAllBlown }: BirthdayCakeProps) => {
       setShowSmoke(new Set());
       setIsBlowing(false);
       onAllBlown?.();
-    }, 2000);
+    }, 3000);
   };
 
   const allBlown = blownCandles.size === candleCount;
 
+  const candleColors = [
+    'linear-gradient(90deg, #FFFFFF, #F0F0F0, #E0E0E0)', // White/Silver
+    'linear-gradient(90deg, #FFD700, #FFEC8B, #FFD700)', // Gold
+    'linear-gradient(90deg, #E6E6FA, #D8BFD8, #E6E6FA)', // Lavender
+    'linear-gradient(90deg, #ADD8E6, #B0E0E6, #ADD8E6)', // Light Blue
+    'linear-gradient(90deg, #F5FFFA, #F0FFF0, #F5FFFA)', // Mint Cream
+  ];
+
   // Arrange candles in rows
   const candleRows = [
-    Array.from({ length: 8 }, (_, i) => i),      // Top row: 8 candles
-    Array.from({ length: 7 }, (_, i) => i + 8),  // Middle row: 7 candles
-    Array.from({ length: 5 }, (_, i) => i + 15), // Bottom row: 5 candles
+    Array.from({ length: 3 }, (_, i) => i),      // Top row: 8 candles
+    Array.from({ length: 0 }, (_, i) => i + 3),  // Middle row: 7 candles
+    // Array.from({ length: 1 }, (_, i) => i + 15), // Bottom row: 5 candles
   ];
 
   return (
     <div className="relative flex flex-col items-center">
+      {/* <audio ref={audioRef} src={birthdaySong} loop /> */}
       {/* 3D-style Cake with layered gradients */}
       <div className="relative">
         {/* Candle container */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
+        <div className="absolute top-12 left-40 -translate-x-1/2 flex flex-col items-center gap-1 z-10">
           {candleRows.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex justify-center gap-2">
+            <div key={rowIndex} className="flex justify-center gap-3 mb-1">
               {row.map((candleIndex) => (
                 <div key={candleIndex} className="candle relative flex flex-col items-center">
                   {/* Flame */}
@@ -84,7 +94,7 @@ const BirthdayCake = ({ candleCount = 20, onAllBlown }: BirthdayCakeProps) => {
                           }}
                         >
                           <div 
-                            className="w-2 h-3 rounded-full"
+                            className="w-2 h-2 rounded-full"
                             style={{
                               background: 'radial-gradient(ellipse, rgba(180, 180, 190, 0.7) 0%, rgba(120, 120, 130, 0.3) 60%, transparent 100%)',
                             }}
@@ -95,13 +105,9 @@ const BirthdayCake = ({ candleCount = 20, onAllBlown }: BirthdayCakeProps) => {
                   )}
                   
                   {/* Candle stick */}
-                  <div className="w-2 h-8 rounded-sm shadow-md"
+                  <div className="w-2 h-8 rounded-t-sm shadow-md"
                     style={{
-                      background: `linear-gradient(90deg, 
-                        hsl(350, 40%, 45%) 0%, 
-                        hsl(350, 50%, 55%) 40%, 
-                        hsl(350, 40%, 40%) 100%
-                      )`,
+                      background: candleColors[candleIndex % candleColors.length],
                     }}
                   >
                     {/* Candle highlight */}
@@ -113,79 +119,12 @@ const BirthdayCake = ({ candleCount = 20, onAllBlown }: BirthdayCakeProps) => {
           ))}
         </div>
 
-        {/* Cake layers - 3D appearance */}
+        {/* Cake Image */}
         <div className="relative mt-8">
-          {/* Top layer */}
-          <div className="relative mx-auto w-40 h-16 rounded-t-2xl shadow-xl z-30"
-            style={{
-              background: `linear-gradient(180deg, 
-                hsl(270, 30%, 35%) 0%, 
-                hsl(270, 35%, 25%) 100%
-              )`,
-              boxShadow: 'inset 0 4px 12px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.4)',
-            }}
-          >
-            {/* Frosting drizzle */}
-            <div className="absolute -bottom-3 left-4 w-4 h-6 rounded-b-full"
-              style={{ background: 'linear-gradient(180deg, hsl(350, 50%, 40%), hsl(350, 60%, 30%))' }}
-            />
-            <div className="absolute -bottom-4 left-12 w-3 h-8 rounded-b-full"
-              style={{ background: 'linear-gradient(180deg, hsl(350, 50%, 40%), hsl(350, 60%, 30%))' }}
-            />
-            <div className="absolute -bottom-2 right-6 w-3 h-5 rounded-b-full"
-              style={{ background: 'linear-gradient(180deg, hsl(350, 50%, 40%), hsl(350, 60%, 30%))' }}
-            />
-            {/* Decorative line */}
-            <div className="absolute top-3 inset-x-3 h-1 bg-gradient-to-r from-transparent via-romantic-muted-crimson/50 to-transparent rounded-full" />
-          </div>
-
-          {/* Middle layer */}
-          <div className="relative mx-auto w-52 h-20 -mt-1 rounded-b-xl shadow-xl z-20"
-            style={{
-              background: `linear-gradient(180deg, 
-                hsl(280, 25%, 30%) 0%, 
-                hsl(280, 30%, 20%) 100%
-              )`,
-              boxShadow: 'inset 0 -4px 12px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.4)',
-            }}
-          >
-            {/* Decorative stripes */}
-            <div className="absolute top-4 inset-x-4 h-0.5 bg-romantic-muted-crimson/30 rounded-full" />
-            <div className="absolute bottom-5 inset-x-4 h-0.5 bg-romantic-muted-crimson/30 rounded-full" />
-            {/* Heart decorations */}
-            <div className="absolute top-2 left-4 text-romantic-muted-crimson opacity-60">❤</div>
-            <div className="absolute top-2 right-4 text-romantic-muted-crimson opacity-60">❤</div>
-          </div>
-
-          {/* Bottom layer */}
-          <div className="relative mx-auto w-64 h-24 -mt-1 rounded-b-2xl shadow-2xl z-10"
-            style={{
-              background: `linear-gradient(180deg, 
-                hsl(270, 25%, 25%) 0%, 
-                hsl(270, 30%, 15%) 100%
-              )`,
-              boxShadow: 'inset 0 -6px 16px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.5)',
-            }}
-          >
-            {/* Decorative elements */}
-            <div className="absolute top-4 inset-x-6 h-1 bg-gradient-to-r from-transparent via-romantic-soft-violet/30 to-transparent rounded-full" />
-            <div className="absolute bottom-6 inset-x-6 h-1 bg-gradient-to-r from-transparent via-romantic-soft-violet/30 to-transparent rounded-full" />
-            {/* Rosettes */}
-            <div className="absolute -top-2 left-6 w-4 h-4 rounded-full bg-romantic-muted-crimson/60 shadow-md" />
-            <div className="absolute -top-2 right-6 w-4 h-4 rounded-full bg-romantic-muted-crimson/60 shadow-md" />
-          </div>
-
-          {/* Cake plate/stand */}
-          <div className="relative mx-auto w-72 h-4 -mt-1 rounded-full shadow-lg"
-            style={{
-              background: 'linear-gradient(180deg, hsl(40, 40%, 45%) 0%, hsl(40, 35%, 35%) 100%)',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)',
-            }}
-          />
-          <div className="relative mx-auto w-20 h-8 -mt-1 rounded-b-lg"
-            style={{
-              background: 'linear-gradient(180deg, hsl(40, 35%, 40%) 0%, hsl(40, 30%, 30%) 100%)',
-            }}
+          <img 
+            src={cakeImage} 
+            alt="Birthday Cake" 
+            className="w-60 h-auto object-cover rounded-lg shadow-lg"
           />
         </div>
       </div>

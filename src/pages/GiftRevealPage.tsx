@@ -117,7 +117,7 @@ const GiftRevealPage = () => {
               <Sparkles className="w-5 h-5 text-romantic-gold animate-pulse" />
             </div>
             <Button
-              onClick={() => navigate('/cake')}
+              onClick={() => navigate('/gallery')}
               className="btn-romantic text-lg px-10 py-6 flex items-center gap-3 mx-auto"
             >
               <span>Time to Blow the Candles!</span>
@@ -130,6 +130,13 @@ const GiftRevealPage = () => {
               Keep scratching! {20 - revealedCards.size} more to go... ✨
             </p>
           )}
+          {/* <Button
+            variant="ghost"
+            onClick={() => navigate('/gallery')}
+            className="mt-4 text-muted-foreground hover:text-primary"
+          >
+            (Preview next page)
+          </Button> */}
         </section>
       </div>
     </div>

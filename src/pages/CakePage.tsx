@@ -10,7 +10,7 @@ const CakePage = () => {
 
   const handleCandlesBlown = () => {
     setTimeout(() => {
-      navigate('/gallery');
+      navigate('/gifts');
     }, 2000);
   };
 

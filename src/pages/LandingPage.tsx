@@ -94,7 +94,7 @@ const LandingPage = () => {
           {countdownComplete ? (
             <div className="animate-fade-in-up">
               <Button
-                onClick={() => navigate('/gifts')}
+                onClick={() => navigate('/cake')}
                 className="btn-romantic text-lg px-10 py-6 flex items-center gap-3 mx-auto"
               >
                 <Heart className="w-6 h-6" fill="currentColor" />
@@ -111,7 +111,7 @@ const LandingPage = () => {
           {/* For testing - remove in production */}
           {/* <Button
             variant="ghost"
-            onClick={() => navigate('/gifts')}
+            onClick={() => navigate('/cake')}
             className="mt-4 text-muted-foreground hover:text-primary"
           >
             (Preview next page)
