@@ -6,13 +6,13 @@ import memory3 from '@/assets/a3.jpg';
 import memory4 from '@/assets/a4.jpg';
 import memory5 from '@/assets/a5.jpg';
 import memory6 from '@/assets/a6.jpg';
-import memory7 from '@/assets/a7.jpg';
-import memory8 from '@/assets/a8.jpg';
+import memory7 from '@/assets/a13.jpeg';
+import memory8 from '@/assets/a14.jpeg';
 import memory9 from '@/assets/a9.jpg';
-import memory10 from '@/assets/a10.jpg';
+import memory10 from '@/assets/a16.jpeg';
 import memory11 from '@/assets/a11.jpg';
-import memory12 from '@/assets/a12.jpg';
-import memory13 from '@/assets/a13.jpg';
+import memory12 from '@/assets/a15.jpeg';
+import memory13 from '@/assets/38.jpg';
 
 interface Photo {
   id: number;
@@ -30,13 +30,13 @@ const PhotoCollage = () => {
     { id: 4, url: memory4, caption: 'Lioness' },
     { id: 5, url: memory5, caption: 'Beauty in bloom.' },
     { id: 6, url: memory6, caption: 'Elegance, perfectly posed' },
-    { id: 7, url: memory7, caption: 'In my hostel' },
-    { id: 8, url: memory8, caption: 'Power meets grace.' },
-    { id: 9, url: memory9, caption: 'Smiles through the screen' },
+    { id: 7, url: memory7, caption: 'A smile that shines' },
+    { id: 8, url: memory9, caption: 'Smiles through the screen' },
+    { id: 9, url: memory8, caption: 'Innocence blooming on the water' },
     { id: 10, url: memory10, caption: 'Cool, confident, classy' },
     { id: 11, url: memory11, caption: 'Rooted in calm' },
-    { id: 12, url: memory12, caption: 'Forever, quietly shining' },
-    { id: 13, url: memory13, caption: 'Sweet moments served' },  
+    { id: 12, url: memory12, caption: 'Joy rippling with the water' },
+    { id: 13, url: memory13, caption: 'Cute with a playful twist' },  
   ];
 
   return (
