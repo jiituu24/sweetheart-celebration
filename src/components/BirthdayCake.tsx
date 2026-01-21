@@ -105,7 +105,7 @@ const BirthdayCake = ({ candleCount = 20, onAllBlown }: BirthdayCakeProps) => {
                   )}
                   
                   {/* Candle stick */}
-                  <div className="w-2 h-8 rounded-t-sm shadow-md"
+                  <div className="w-2 h-9 rounded-t-sm shadow-md"
                     style={{
                       background: candleColors[candleIndex % candleColors.length],
                     }}
@@ -156,7 +156,7 @@ const BirthdayCake = ({ candleCount = 20, onAllBlown }: BirthdayCakeProps) => {
       </button>
 
       {allBlown && (
-        <p className="mt-4 text-center font-display text-lg text-muted-foreground animate-fade-in-up">
+        <p className="mt-4 text-center font-lora text-lg text-muted-foreground animate-fade-in-up">
           Make a wish! 💫
         </p>
       )}

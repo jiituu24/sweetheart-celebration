@@ -12,7 +12,7 @@ const SecretPage = () => {
   return (
     <div className="min-h-screen romantic-gradient relative overflow-hidden">
       <FloatingElements />
-      <SecretGate secretKey="love" onSuccess={handleSuccess} />
+      <SecretGate secretKey="mele babu ne thana thaya" onSuccess={handleSuccess} />
     </div>
   );
 };

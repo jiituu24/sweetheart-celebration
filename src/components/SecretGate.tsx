@@ -53,7 +53,7 @@ const SecretGate = ({ secretKey, onSuccess }: SecretGateProps) => {
             The Secret Gate
           </h2>
           <p className="text-muted-foreground font-body">
-            What is the magic word that unlocks my heart?
+            What is the magic Sentence that unlocks my heart?
           </p>
         </div>
 
@@ -88,7 +88,7 @@ const SecretGate = ({ secretKey, onSuccess }: SecretGateProps) => {
         </form>
 
         <p className="mt-6 text-xs text-muted-foreground font-body">
-          Hint: It's a four-letter word that means everything 💝
+          Hint: Phle din deal hui thi ye sentence use nhi krenge it's one of my stickers i use to tease you  💝
         </p>
       </div>
     </div>

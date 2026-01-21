@@ -23,12 +23,12 @@ const CakePage = () => {
         <header className="text-center mb-12">
           <div className="flex justify-center items-center gap-4 mb-4">
             <Cake className="w-10 h-10 text-primary animate-float" />
-            <h1 className="text-3xl md:text-4xl font-display text-foreground">
+            <h1 className="text-3xl md:text-4xl font-pacifico text-foreground">
               Make a Wish!
             </h1>
             <Cake className="w-10 h-10 text-primary animate-float" style={{ animationDelay: '0.5s' } as React.CSSProperties} />
           </div>
-          <p className="text-lg text-muted-foreground font-body">
+          <p className="text-lg text-muted-foreground font-pacifico">
             Close your eyes, make a wish, and blow out the candles! 🕯️
           </p>
         </header>
@@ -48,7 +48,7 @@ const CakePage = () => {
 
         {/* Ambient messages */}
         <div className="max-w-md mx-auto text-center">
-          <p className="font-body text-muted-foreground italic mb-4">
+          <p className="font-oswald text-muted-foreground italic mb-4">
           . May all your wishes come true today and always."
           </p>
           <div className="flex justify-center gap-2">

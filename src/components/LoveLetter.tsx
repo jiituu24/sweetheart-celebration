@@ -9,20 +9,14 @@ const LoveLetter = () => {
     setTimeout(() => setVisible(true), 100);
   }, []);
 
-  const letterContent = `My Dearest Love,
+  const letterContent = `My Dearest Tiya,
+  I'm extremely sorry i ruined your birthday last year by breaking up with you on your special day 😔.I know i have ruined so many speacial moments of yours but believe me it was never my intention to hurt you.I became overpossessive just ruined your special day. This year again i planned so many surprises for your birthday. but started late and i thought i won't be able to complete them in time. i'm writing this letter and right now the time is 4:37 am on 21st Jan 2026. Just to implement all the plans i have in mind for you, i stayed awake whole night. I'm really sorry for all the pain i have caused you in past.
 
-On this special day, I want you to know just how much you mean to me. Every moment we've shared has been a precious gift that I treasure deep in my heart.
-
-From the first day we met, you've brought so much joy, laughter, and love into my life. Your smile lights up my darkest days, and your presence makes everything feel right in the world.
-
-Thank you for being my partner, my confidant, my best friend, and my greatest love. You make me want to be a better person every single day.
-
-As we celebrate another year of your beautiful existence, I want you to know that my love for you grows stronger with each passing moment. You are my today and all of my tomorrows.
-
-Happy Birthday, my love. May this year bring you all the happiness, success, and love that you so richly deserve.
-
-Forever and always yours,
-With all my heart ❤️`;
+  You're not my princess or my queen you're my world, you're my godess and i want to live in a happy world. you're such a understanding girlfriend. believe me people have there criteria about their girlfriend but i was never having any such criteria but if this is my luck or what i got you that i never thought of. you're exactly what i wanted in my life. you're so caring, loving, beautiful, understaning, smart and what not you even care for my money that i don't care while i'm spending on you, you gifted me the guradian bell, you came to varanasi just to me. I really love you and i want you to be my loop invariant (Don't care it is a computer science term which means a property that never changes in a loop) and for me the loop is the loop of lifes i want you in every incarnation of mine, i want to live with you only, i want to have babies with you, i want to go to heaven with you,i want to save you from the devils in the hell. i want to remove spikes from fish for you, i want to peel a orange for you, i want to love you for the eternity. 
+  
+  Forever and always yours,
+  Jiituu
+  `;
 
   return (
     <div className={`min-h-screen flex items-center justify-center p-4 md:p-8
@@ -63,11 +57,11 @@ With all my heart ❤️`;
           </div>
 
           <div className="mt-8 space-y-4">
-            <h1 className="text-3xl md:text-4xl font-display text-center text-foreground mb-8">
+            <h1 className="text-3xl md:text-4xl font-cursive text-center text-foreground mb-8">
               A Love Letter For You
             </h1>
 
-            <div className="space-y-4 font-body text-foreground leading-relaxed whitespace-pre-line">
+            <div className="space-y-4 font-parisienne text-foreground leading-relaxed whitespace-pre-line">
               {letterContent.split('\n\n').map((paragraph, index) => (
                 <p 
                   key={index} 

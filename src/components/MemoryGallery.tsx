@@ -15,10 +15,10 @@ const MemoryGallery = () => {
   const memories: Memory[] = loadMemories();
 
   const loveMessages = [
-    "Compliment 1 .",
-    "Compliment 2",
-    "Compliment 3",
-    "Compliment 4",
+    "Every moment with you is a treasure I hold close to my heart.",
+    "you make ordinary days extraordinary just by being you.",
+    "in your smile, I find my happiness and my home.",
+    "your laughter is the sweetest melody to my ears.",
   ];
 
   return (
