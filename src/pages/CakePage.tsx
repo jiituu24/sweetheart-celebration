@@ -1,12 +1,21 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FloatingElements from '@/components/FloatingElements';
 import BirthdayCake from '@/components/BirthdayCake';
 import TeddyBear from '@/components/TeddyBear';
 import HeartSticker from '@/components/HeartSticker';
 import { Cake } from 'lucide-react';
+import { useAudio } from '@/context/AudioContext';
 
 const CakePage = () => {
   const navigate = useNavigate();
+  const { play, isPlayed } = useAudio();
+
+  useEffect(() => {
+    if (!isPlayed) {
+      play();
+    }
+  }, [play, isPlayed]);
 
   const handleCandlesBlown = () => {
     setTimeout(() => {
