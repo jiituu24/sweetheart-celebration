@@ -109,13 +109,13 @@ const LandingPage = () => {
           )}
           
           {/* For testing - remove in production */}
-          <Button
+          {/* <Button
             variant="ghost"
             onClick={() => navigate('/cake')}
             className="mt-4 text-muted-foreground hover:text-primary"
           >
             (Preview next page)
-          </Button>
+          </Button> */}
 
           
 
