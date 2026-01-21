@@ -80,14 +80,14 @@ const LandingPage = () => {
         </section>
 
         {/* Count Up Timer */}
-        <section className="mb-16">
+        {/* <section className="mb-16">
           <div className="card-romantic max-w-2xl mx-auto">
             <h2 className="text-2xl font-pacifico text-center mb-6 text-foreground">
               💑 Time We've Spent Together 💑
             </h2>
             <CountUpTimer startDate={startDate} />
           </div>
-        </section>
+        </section> */}
 
         {/* Proceed Button */}
         <section className="text-center pb-12">
@@ -109,13 +109,13 @@ const LandingPage = () => {
           )}
           
           {/* For testing - remove in production */}
-          {/* <Button
+          <Button
             variant="ghost"
             onClick={() => navigate('/cake')}
             className="mt-4 text-muted-foreground hover:text-primary"
           >
             (Preview next page)
-          </Button> */}
+          </Button>
 
           
 
